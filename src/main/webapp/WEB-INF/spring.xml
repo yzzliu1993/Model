@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:tx="http://www.springframework.org/schema/tx"
+       xmlns:mvc="http://www.springframework.org/schema/mvc"
+       xmlns:task="http://www.springframework.org/schema/task"
+       xsi:schemaLocation="
+       http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://www.springframework.org/schema/context
+       http://www.springframework.org/schema/context/spring-context.xsd
+       http://www.springframework.org/schema/mvc
+       http://www.springframework.org/schema/mvc/spring-mvc.xsd
+       http://www.springframework.org/schema/task
+       http://www.springframework.org/schema/task/spring-task.xsd
+       http://www.springframework.org/schema/tx
+       http://www.springframework.org/schema/tx/spring-tx.xsd ">
+
+
+    <!--//scan package-->
+    <context:component-scan base-package="com.*"/>
+    <mvc:annotation-driven/>
+    <bean id="viewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+        <property name="viewClass" value="org.springframework.web.servlet.view.JstlView"/>
+        <property name="prefix" value="/spring_view/"/>
+        <property name="suffix" value=".jsp"/>
+    </bean>
+    <mvc:resources mapping="/pages/**" location="/spring_resoruces/"/>
+    <mvc:resources mapping="/js/**" location="/spring_resoruces/"/>
+    <mvc:resources mapping="/img/**" location="/spring_resoruces/"/>
+
+    <!--//DataSource-->
+    <!--<bean id="DataBase"-->
+          <!--class="org.apache.commons.dbcp.BasicDataSource"-->
+          <!--destroy-method="close">-->
+        <!--<property name="driverClassName" value="com.mysql.jdbc.Driver"/>-->
+        <!--<property name="url"-->
+                  <!--value="jdbc:mysql://DataBase IP:3306/DataBase schema ?useUnicode=true&amp;characterEncoding=utf8&amp;zeroDateTimeBehavior=convertToNull"/>-->
+        <!--<property name="username" value="qport"/>-->
+        <!--<property name="password" value="rmc80339829"/>-->
+    <!--</bean>-->
+
+    <!--<bean id="DBSessFactory"-->
+          <!--class="org.springframework.orm.hibernate4.LocalSessionFactoryBean">-->
+        <!--<property name="dataSource" ref="DataBase"></property>-->
+        <!--<property name="hibernateProperties">-->
+            <!--<props>-->
+                <!--<prop key="hibernate.dialect">org.hibernate.dialect.MySQL5Dialect</prop>-->
+                <!--<prop key="hibernate.show_sql">false</prop>-->
+                <!--<prop key="hibernate.c3p0.timeout">3600</prop>-->
+                <!--<prop key="hibernate.c3p0.idle_test_period">1000</prop>-->
+                <!--<prop key="hibernate.dbcp.validationQuery">select 1</prop>-->
+                <!--<prop key="hibernate.dbcp.testOnBorrow">true</prop>-->
+                <!--<prop key="hibernate.dbcp.testOnReturn">true</prop>-->
+            <!--</props>-->
+        <!--</property>-->
+        <!--<property name="packagesToScan">-->
+            <!--<list>-->
+                <!--掃描要mapping 的 Entity-->
+                <!--<value>.........</value>-->
+            <!--</list>-->
+        <!--</property>-->
+    <!--</bean>-->
+
+    <!--<bean id="qportTransactionManager"-->
+          <!--class="org.springframework.orm.hibernate4.HibernateTransactionManager">-->
+        <!--<property name="sessionFactory" ref="DBSessFactory"></property>-->
+    <!--</bean>-->
+    <!--<tx:annotation-driven transaction-manager="qportTransactionManager"/>-->
+
+</beans>
