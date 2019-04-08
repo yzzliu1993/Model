@@ -37,8 +37,8 @@
         <!--<property name="driverClassName" value="com.mysql.jdbc.Driver"/>-->
         <!--<property name="url"-->
                   <!--value="jdbc:mysql://DataBase IP:3306/DataBase schema ?useUnicode=true&amp;characterEncoding=utf8&amp;zeroDateTimeBehavior=convertToNull"/>-->
-        <!--<property name="username" value="qport"/>-->
-        <!--<property name="password" value="rmc80339829"/>-->
+        <!--<property name="username" value="DB accouunt"/>-->
+        <!--<property name="password" value="DB password"/>-->
     <!--</bean>-->
 
     <!--<bean id="DBSessFactory"-->
