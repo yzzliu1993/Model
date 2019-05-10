@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <bytecodeTargetLevel>
+      <module name="contract.main" target="1.7" />
+      <module name="contract.test" target="1.7" />
+      <module name="RMC0000042.main" target="1.7" />
+      <module name="RMC0000042.test" target="1.7" />
+    </bytecodeTargetLevel>
+  </component>
+</project>
